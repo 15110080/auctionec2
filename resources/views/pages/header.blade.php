@@ -11,7 +11,7 @@
   
   <title>Homepage!</title>
   <!-- Custom styles for this template -->
-  <link href="../Css/HomePage.css" rel="stylesheet">
+  <link href="../css/HomePage.css" rel="stylesheet">
     <script src="http://code.jquery.com/jquery-3.3.1.min.js"
                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
                crossorigin="anonymous">
