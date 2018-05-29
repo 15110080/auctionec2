@@ -1,0 +1,91 @@
+label {
+  position: relative;
+}
+
+label:before{
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+     
+}
+p{
+  margin: 5px;
+}
+
+footer{
+    min-height: 100px;
+    background-color: #d6dad7;
+   
+}
+header{
+    width: 100%;
+	margin:auto;
+}
+header a{
+    margin: 0 10px 0 10px;
+}
+div.row2{
+    float: left;
+    margin-top: 20px;
+}
+
+.bid{
+    text-align: center;
+    width: 17%;
+    margin: auto; 
+    margin-right: 20px;
+}
+div.bid a{
+    
+}
+#Search{
+  padding: 10px 40px;
+}
+
+.HappeningNow {
+    background-color: red;
+    color: white;
+}
+.linedown {
+    margin-top: 10px;
+}
+
+#between {
+    min-height: 700px;
+   
+}
+.border1{
+  border: 1px solid #bda6a6;
+  margin: 0 0 0 1px;
+  width: 500px;
+  height: 400px;
+
+}
+.border{
+  border: solid #bda6a6;
+  margin-bottom: 5px;
+  padding-top: 5px;
+}
+.putright{
+  margin-left: 80px;
+}
+
+#image{
+    margin-right: 70px;
+}
+.center{
+    text-align: center;
+}
+#tablecart{
+    border: 2px solid royalblue;
+
+}
+.frame{
+    background-color: rgb(201, 195, 195);
+}
+#h1{
+  color:red;
+}
