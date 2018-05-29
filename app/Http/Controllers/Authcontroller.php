@@ -32,13 +32,17 @@ class Authcontroller extends Controller
     
     public function postDangky(Request $request){
         $bidder_new = new Bidder();
+        $username=$request->hoten;
         $bidder_new->name = $request->hoten;
         $bidder_new->address = $request->diachi;
         $bidder_new->cmnd = $request->cmnd;
         $bidder_new->phone_number = $request->sdt;
         $bidder_new->username = $request->username;
-        $pasword = md5($request->password);
-        $bidder_new->password =  $pasword ;
+        $pasword = $request->password;
+        $Salt = $username.$password;
+                $Salt = md5($Salt);
+                $Salt = "0x".$Salt;
+        $bidder_new->password =  $Salt ;
         $bidder_new->save();
         return view('thanhcong',['thongbaodk'=>'Đăng ký thành công']);
     }
