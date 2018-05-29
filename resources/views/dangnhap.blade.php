@@ -41,9 +41,7 @@
         <label style="float: right;">
             <a href="http://ec02-auction.herokuapp.com/dangky">Đăng Ký</a>
         </label>
-        <label style="float: right;">
-            <a href="/">Quay về trang chủ</a>
-        </label>
+        
         <br>
 <!--         <p style="color: red"> {{Session::get('error')}}<!--  {{$error or ''}} --> 
           @if(Session::has('error'))
@@ -51,6 +49,9 @@
           @endif
       </div>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Đăng nhập</button>
+      <label style="float: right;">
+            <a href="/">Quay về trang chủ</a>
+        </label>
       <p class="mt-5 mb-3 text-muted text-center">© EC-02</p>
     </form>
   </body>
