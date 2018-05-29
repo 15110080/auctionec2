@@ -39,6 +39,9 @@
           <input type="checkbox" value="remember-me"> Lưu mật khẩu
         </label>
         <label style="float: right;">
+            <a href="http://ec02-auction.herokuapp.com/dangky">Đăng Ký</a>
+        </label>
+        <label style="float: right;">
             <a href="/">Quay về trang chủ</a>
         </label>
         <br>
