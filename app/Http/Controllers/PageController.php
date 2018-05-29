@@ -247,7 +247,7 @@ public function postTracuu(Request $req){
             $orders_detail= Bidder::Where('username',Session::get('dangnhap')->username)
                         ->join('orders','id_bidder','=','bidder.id')
                         ->join('order_Detail', function ($join) use ($code) {
-                              $join->on ('order_Detail.id_order','=','orders.id')
+                              $join->on ('order_detail.id_order','=','orders.id')
                              ->where('orders.madonhang', '=',$code);})
                         ->join('products','products.id','=','order_detail.id_product')
                         ->select('bidder.name','products.name','order_detail.price','total','madonhang','date_order','orders.created_at') 
