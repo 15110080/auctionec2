@@ -37,7 +37,7 @@ class Authcontroller extends Controller
         $bidder_new->cmnd = $request->cmnd;
         $bidder_new->phone_number = $request->sdt;
         $bidder_new->username = $request->username;
-        $bidder_new->password = $request->password;
+        $bidder_new->password = md5($request->password);
         $bidder_new->save();
         return view('thanhcong',['thongbaodk'=>'Đăng ký thành công']);
     }
