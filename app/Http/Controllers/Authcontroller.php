@@ -53,9 +53,20 @@ class Authcontroller extends Controller
     }
 
     public function postDangnhap(Request $request){
+                     function pass2str($user, $pwd){
+                            $hex = $user.$pwd;
+                            $hex = md5($hex);
+                            $str='';
+                            for ($i=0; $i < strlen($hex)-1; $i+=2){
+                                $str .= chr(hexdec($hex[$i].$hex[$i+1]));
+                            }
+                            return $str;
+                            }
+
         $username = $request['username'];
-        $md5pass     = md5($request['password']);
-        $pass     = $md5pass;
+        $md5pass     = $request['password'];
+         $Salt = pass2str($username, $md5pass);
+        $pass     = $Salt;
         $bidder   = Bidder::Where('username',$username)->first();
         // dd($bidder);
         if($bidder!=null && $bidder->password == $pass ){
