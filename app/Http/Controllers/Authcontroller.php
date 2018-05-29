@@ -58,8 +58,8 @@ class Authcontroller extends Controller
             {
                 Session::put('id_cart',$cart_db->id);                     // Lưu id_cart để xóa    
                 $cart_detail = Cart_detail::where('id_cart', $cart_db->id)
-                              ->join('Products','Products.id','=','Cart_detail.id_product')                                     
-                              ->select('Products.id','name','image','Cart_detail.price','create_at')->get();
+                              ->join('products','products.id','=','cart_detail.id_product')                                     
+                              ->select('products.id','name','image','cart_detail.price','create_at')->get();
                  $oldcart=null;
                  $cart= new Cart($oldcart); 
                  foreach ($cart_detail as $value) 

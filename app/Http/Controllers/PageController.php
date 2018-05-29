@@ -48,8 +48,8 @@ class PageController extends Controller
         $getsp = AuctionProduct::Where('id',$id)->first();
         $time_bid = timebid::where('id_product',$id)->first();
         $bidders = Bidder_AuctionProduct::Where('id_product',$id)
-                                ->join('Bidder', 'Bidder.id', '=', 'Bidder_AuctionProduct.id_bidder')
-                                ->select('bidder.id','name','bid_price','Bidder_AuctionProduct.created_at','username')
+                                ->join('bidder', 'bidder.id', '=', 'bidder_auctionProduct.id_bidder')
+                                ->select('bidder.id','name','bid_price','bidder_auctionProduct.created_at','username')
                                 ->orderBy('bid_price', 'desc')
                                 ->get();
         Session::put('timebid',$time_bid);
@@ -173,8 +173,8 @@ class PageController extends Controller
 
           // in ngày
           $cart_detail1 = Cart_detail::where('id_cart', Session('id_cart'))
-                              ->join('Products','Products.id','=','Cart_detail.id_product')                                     
-                              ->select('Products.id','name','image','Cart_detail.price','create_at')->get();
+                              ->join('products','products.id','=','cart_detail.id_product')                                     
+                              ->select('croducts.id','name','image','cart_detail.price','create_at')->get();
                  $oldcart=null;
                  $cart= new Cart($oldcart); 
                  foreach ($cart_detail1 as $value) 
@@ -245,12 +245,12 @@ public function postTracuu(Request $req){
       
             // Lọc ra chi tiết đơn hàng theo đia chỉ Email + code
             $orders_detail= Bidder::Where('username',Session::get('dangnhap')->username)
-                        ->join('Orders','id_bidder','=','Bidder.id')
-                        ->join('Order_Detail', function ($join) use ($code) {
-                              $join->on ('Order_Detail.id_order','=','Orders.id')
-                             ->where('Orders.madonhang', '=',$code);})
-                        ->join('Products','Products.id','=','Order_Detail.id_product')
-                        ->select('Bidder.name','Products.name','Order_Detail.price','total','madonhang','date_order','orders.created_at') 
+                        ->join('orders','id_bidder','=','bidder.id')
+                        ->join('order_Detail', function ($join) use ($code) {
+                              $join->on ('order_Detail.id_order','=','orders.id')
+                             ->where('orders.madonhang', '=',$code);})
+                        ->join('products','products.id','=','order_detail.id_product')
+                        ->select('bidder.name','products.name','order_detail.price','total','madonhang','date_order','orders.created_at') 
                         ->get();
             // Lưu danh sách đơn hàng
          
