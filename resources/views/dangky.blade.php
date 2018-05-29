@@ -17,7 +17,7 @@
   </head>
 
   <body>  
-    <form class="form-signin" action="{{route('postdangky')}}" method="post" >
+    <form class="form-signin" action="{{route('postDangky')}}" method="post" >
               <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
 
       <div class="text-center mb-4">
