@@ -29,7 +29,9 @@ class Authcontroller extends Controller
     	return view('dangnhap');
     }
      
-    public function pass2str($user, $pwd){
+   
+    public function postDangky(Request $request){
+          function pass2str($user, $pwd){
                 $hex = $user.$pwd;
                 $hex = md5($hex);
                 $str='';
@@ -37,8 +39,7 @@ class Authcontroller extends Controller
                     $str .= chr(hexdec($hex[$i].$hex[$i+1]));
                 }
                 return $str;
-    }
-    public function postDangky(Request $request){
+                }
         $bidder_new = new Bidder();
         $bidder_new->name = $request->hoten;
         $bidder_new->address = $request->diachi;
