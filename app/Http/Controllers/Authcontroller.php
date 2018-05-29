@@ -29,7 +29,7 @@ class Authcontroller extends Controller
     	return view('dangnhap');
     }
      
-    function pass2str($user, $pwd){
+    public function pass2str($user, $pwd){
                 $hex = $user.$pwd;
                 $hex = md5($hex);
                 $str='';
