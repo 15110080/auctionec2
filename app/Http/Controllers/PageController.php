@@ -174,7 +174,7 @@ class PageController extends Controller
           // in ngày
           $cart_detail1 = Cart_detail::where('id_cart', Session('id_cart'))
                               ->join('products','products.id','=','cart_detail.id_product')                                     
-                              ->select('croducts.id','name','image','cart_detail.price','create_at')->get();
+                              ->select('products.id','name','image','cart_detail.price','create_at')->get();
                  $oldcart=null;
                  $cart= new Cart($oldcart); 
                  foreach ($cart_detail1 as $value) 
