@@ -10,6 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('long',function(){
+
+    return view('long');
+});
 
 Route::get('thanhcong',function(){
     return view('thanhcong');
