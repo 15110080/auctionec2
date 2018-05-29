@@ -48,8 +48,8 @@ class PageController extends Controller
         $getsp = AuctionProduct::Where('id',$id)->first();
         $time_bid = timebid::where('id_product',$id)->first();
         $bidders = Bidder_AuctionProduct::Where('id_product',$id)
-                                ->join('bidder', 'bidder.id', '=', 'bidder_auctionProduct.id_bidder')
-                                ->select('bidder.id','name','bid_price','bidder_auctionProduct.created_at','username')
+                                ->join('bidder', 'bidder.id', '=', 'bidder_auctionproduct.id_bidder')
+                                ->select('bidder.id','name','bid_price','bidder_auctionproduct.created_at','username')
                                 ->orderBy('bid_price', 'desc')
                                 ->get();
         Session::put('timebid',$time_bid);
